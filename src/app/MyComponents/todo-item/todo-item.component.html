@@ -1,0 +1,10 @@
+<div class="my-3">
+    <h5 [ngClass]="{'strike': !todo.active}">{{todo.title}}</h5>
+    <!-- <h5 [class]="'nostrike'?todo.active:'strike'">{{todo.title}}</h5> JS class attribute strike if todo checkbox is clicked -->
+    <p [ngClass]="{'strike': !todo.active}">{{todo.desc}}</p>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="todo{{i}}" (click)="onCheckboxClick(todo)" [checked]= "!todo.active">
+        <label for="todo{{i}}" class="form-check-label">Done Toggle✔</label> <!-- i taken asa number to make each section'd id unique -->
+    </div>
+    <button class="btn btn-sm btn-danger" (click)="onClick(todo)">Delete</button>
+</div>
